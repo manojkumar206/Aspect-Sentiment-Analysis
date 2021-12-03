@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <title>Aspect Sentiment Prediction</title>
+    
+    <style>
+        body {
+            background-image: url("image4.jpg") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+             
+        }
+        h1{
+            color:rgb(105, 16, 105);margin: 10px;
+        }
+        form {
+            width: 70%;
+            background:rgb(184, 241, 184);
+            opacity: 0.5;
+
+        }
+        input[type="text"], [type="text"]{
+            width:90%;
+            height:30px;
+            font-size:20px;
+            margin:10px;
+            outline:none;
+            text-align: center;
+
+        }
+        button[type="submit"]{
+            width:30%;
+            height:30px;
+            color: white;
+            background:rgb(58, 5, 58);
+            cursor:pointer;
+            outline:none;
+            margin: 10px;
+            font-size: 18px;
+        }
+        h2{
+            color: rgb(80, 5, 80);margin: 10px;
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+    <div class="login">
+    
+        <center>
+            <h1>Aspect Sentiment Prediction </h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text"  name="Text" placeholder="textsentence" required="required"/>
+            <input type="text"  name="Aspect from above text" placeholder="aspect" required="required"/>
+            <!-- <input type="submit" value="predict"/> -->
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        </center>
+        
+        <br>
+        <br>
+        <center>
+            <h3>Predicted sentiment of the aspect is <h2>{{prediction_text}}</h2></h3>
+
+        </center>
+        
+    </div>
+    
+</body>
+</html>
+
 
